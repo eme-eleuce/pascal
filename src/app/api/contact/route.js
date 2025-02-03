@@ -9,7 +9,7 @@ export async function POST(request) {
 
     const { data, error } = await resend.emails.send({
       from: 'Sub Sole Films <onboarding@resend.dev>',
-      to: 'luis.iarmolen@gmail.com',
+      to: 'pascal@subsolefilms.com',
       subject: `Neue Kontaktanfrage von ${vorname} ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; padding: 20px;">

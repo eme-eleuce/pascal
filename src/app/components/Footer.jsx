@@ -13,8 +13,8 @@ export default function Footer() {
             <Image
               src={logo}
               alt="Sub Sole Films"
-              width={200}
-              height={60}
+              width={400}
+              height={80}
               className="w-[400px] md:w-[400px] lg:w-[500px] h-auto"
               priority
             />
