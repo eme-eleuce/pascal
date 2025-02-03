@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Sub Sole Films",
   description: "aig",
+
 };
 
 export default function RootLayout({ children }) {

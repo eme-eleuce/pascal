@@ -11,10 +11,11 @@ export default function Home() {
     <div> 
 
       <Head>
-        <title>Pacchar</title>
-        <meta name="description" content="Bienvenido a Pacchar" />
-      
+        <title>Sub Sole Films</title>
+        <meta name="description" content="/" />
+        
       </Head>
+
      <Hero/>
      <ParallaxServices />
      <VideoGallery />
