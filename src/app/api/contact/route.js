@@ -1,14 +1,21 @@
 import { NextResponse } from 'next/server'
-import { Resend } from 'resend'
+import nodemailer from 'nodemailer'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Configurar el transporter de nodemailer
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASSWORD
+  }
+})
 
 export async function POST(request) {
   try {
     const { vorname, name, email, nachricht } = await request.json()
 
-    const { data, error } = await resend.emails.send({
-      from: 'Sub Sole Films <onboarding@resend.dev>',
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
       to: 'pascal@subsolefilms.com',
       subject: `Neue Kontaktanfrage von ${vorname} ${name}`,
       html: `
@@ -20,24 +27,14 @@ export async function POST(request) {
           <p style="white-space: pre-line;">${nachricht}</p>
         </div>
       `
-    })
-
-    if (error) {
-      console.error('Error sending email:', error)
-      return NextResponse.json(
-        { 
-          success: false,
-          message: 'Failed to send email',
-          error: error.message
-        },
-        { status: 500 }
-      )
     }
+
+    const info = await transporter.sendMail(mailOptions)
 
     return NextResponse.json({ 
       success: true,
       message: 'Email sent successfully',
-      data
+      data: info
     })
 
   } catch (error) {
