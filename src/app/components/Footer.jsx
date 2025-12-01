@@ -1,29 +1,29 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { FaVimeo, FaLinkedin, FaInstagram } from 'react-icons/fa'
-import logo from '@/app/photos/logo.png';
+import logo from '../../../public/photos/logo.png';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1B365D] text-white py-12">
+    <footer className="bg-[#1B365D] text-white py-8">
       <div className="container mx-auto px-8 md:px-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Logo */}
-          <div className="flex items-center justify-center md:justify-start col-span-1 md:col-span-2">
+          <div className="flex items-center justify-center md:justify-start">
             <Image
               src={logo}
               alt="Sub Sole Films"
               width={400}
               height={80}
-              className="w-[400px] md:w-[400px] lg:w-[500px] h-auto"
+              className="w-[350px] md:w-[350px] lg:w-[450px] h-auto"
               priority
             />
           </div>
 
           {/* Kontakt */}
           <div className="text-center md:text-left">
-            <h3 className="text-orange-600 font-bold text-xl md:text-2xl mb-6">KONTAKT</h3>
-            <div className="space-y-3 text-lg md:text-xl">
+            <h3 className="text-orange-600 font-bold text-lg md:text-xl mb-3">KONTAKT</h3>
+            <div className="space-y-2 text-base md:text-lg">
               <p className="font-medium">+41 79 731 06 34</p>
               <a 
                 href="mailto:pascal@subsolefilms.com"
@@ -36,42 +36,44 @@ export default function Footer() {
 
           {/* Adresse */}
           <div className="text-center md:text-left">
-            <h3 className="text-orange-600 font-bold text-xl md:text-2xl mb-6">ADRESSE</h3>
-            <div className="space-y-3 text-lg md:text-xl">
+            <h3 className="text-orange-600 font-bold text-lg md:text-xl mb-3">ADRESSE</h3>
+            <div className="space-y-2 text-base md:text-lg">
               <p className="font-medium">Gerechtigkeitsgasse 81</p>
               <p className="font-medium">3011 Bern</p>
             </div>
           </div>
+        </div>
 
+        {/* Copyright and Social Media */}
+        <div className="border-t border-gray-600 pt-6 flex flex-col-reverse md:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-gray-400">
+            &copy; {new Date().getFullYear()} Sub Sole Films. Alle Rechte vorbehalten.
+          </p>
+          
           {/* Social Media */}
-          <div className="flex justify-center md:justify-end items-start space-x-8">
+          <div className="flex items-center space-x-6">
             <Link 
               href="https://vimeo.com/user62601297" 
               target="_blank"
               className="text-white hover:text-orange-600 transition-colors"
             >
-              <FaVimeo size={32} />
+              <FaVimeo size={24} />
             </Link>
             <Link 
               href="https://www.linkedin.com/in/pascal-gysi-186938160" 
               target="_blank"
               className="text-white hover:text-orange-600 transition-colors"
             >
-              <FaLinkedin size={32} />
+              <FaLinkedin size={24} />
             </Link>
             <Link 
               href="https://www.instagram.com/pascal_subsole/" 
               target="_blank"
               className="text-white hover:text-orange-600 transition-colors"
             >
-              <FaInstagram size={32} />
+              <FaInstagram size={24} />
             </Link>
           </div>
-        </div>
-
-        {/* Copyright */}
-        <div className="mt-12 text-center text-base text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Sub Sole Films. Alle Rechte vorbehalten.</p>
         </div>
       </div>
     </footer>

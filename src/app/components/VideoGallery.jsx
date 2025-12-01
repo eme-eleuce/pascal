@@ -41,14 +41,13 @@ const VideoGallery = () => {
   return (
     <div className="container mx-auto px-4 py-10 sm:px-6 lg:px-8">
       <motion.h1
-    initial={{ opacity: 0, y: -20 }} // Estado inicial: invisible y desplazado hacia arriba
-    whileInView={{ opacity: 1, y: 0 }} // Animación cuando el elemento es visible
-    viewport={{ once: true }} // La animación solo se ejecuta una vez
-    transition={{ duration: 1.5, ease: "easeOut" }} // Duración y curva de la animación
-    className="text-5xl lg:text-[70px] font-bold text-orange-600 py-16 text-center mb-8"
-  >
-    Einige Projekte
-  </motion.h1>
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="text-5xl lg:text-[70px] font-bold text-orange-600 py-16 text-center mb-8"
+      >
+        Einige Projekte
+      </motion.h1>
       {/* Featured Video */}
       <div className="mb-6 max-w-5xl mx-auto">
         <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}>

@@ -60,7 +60,7 @@ export default function Contact() {
   }
 
   return (
-    <section className="py-12 px-4">
+    <section className="py-12 px-4 border-t border-gray-300">
       <div className="max-w-4xl mx-auto bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200/50 overflow-hidden">
         <motion.div 
           className="bg-gradient-to-r from-orange-600/10 to-orange-600/5 border-b border-gray-200/50 px-6 py-8"

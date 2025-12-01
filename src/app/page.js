@@ -17,11 +17,12 @@ export default function Home() {
       </Head>
 
      <Hero/>
-     <ParallaxServices />
-     <VideoGallery />
-     <Steps />
-     <Team />
-     <Contact />
+     
+     {/* Content that slides over Hero */}
+     <div className="relative z-10 bg-white">
+       <Steps />
+       <Contact />
+     </div>
     </div>
   );
 }

@@ -1,13 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import {IoIosArrowDown} from 'react-icons/io';
-import fondo from '@/app/photos/hero.png';
+import fondo from '../../../public/photos/hero.png';
 import { MdOutlineConstruction } from "react-icons/md";
-import logo from '@/app/photos/logo.png';
+import logo from '../../../public/photos/logo.png';
 
 const Hero = () => {
   return (
-    <div className="relative h-screen flex items-center justify-center" >
+    <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden" >
       {/* Imagen de fondo */}
       <div className="absolute inset-0">
         <Image
@@ -28,11 +28,7 @@ const Hero = () => {
       </div>
       
       
-      <div className='absolute justify-center mt-[36rem] lg:mt-[37rem] md:mt-[34rem] text-white cursor-pointer'>
-            <Link href='#services' scroll={true}>
-               <IoIosArrowDown size={60} className='animate-heartbeat cursor-pointer'/>
-            </Link>
-              </div>
+      
     </div>
   );
 }

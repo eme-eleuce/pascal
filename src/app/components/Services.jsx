@@ -1,15 +1,11 @@
 "use client"
-import { Parallax, ParallaxProvider } from "react-scroll-parallax"
 import Image from "next/image"
 import { motion } from 'framer-motion';
-import social from '@/app/photos/social-media-clips.jpg'
-import video from '@/app/photos/video.jpg'
-import photography from '@/app/photos/photography.jpg'
-import documentalism from '@/app/photos/documentalism.jpg'
-import postproduction from '@/app/photos/postproduction.jpg'
-
-
-
+import social from '../../../public/photos/social-media-clips.jpg'
+import video from '../../../public/photos/video.jpg'
+import photography from '../../../public/photos/photography.jpg'
+import documentalism from '../../../public/photos/documentalism.jpg'
+import postproduction from '../../../public/photos/postproduction.jpg'
 
 const services = [
   {
@@ -39,51 +35,93 @@ const services = [
   },
 ]
 
-const ParallaxServices = () => {
-  return (
-    <ParallaxProvider>
-      <section id="services" className="w-full min-h-screen">
-      <div className="absolute w-full z-10 flex justify-center pt-12">
-      <motion.h1
-    initial={{ opacity: 0, y: -20 }} // Estado inicial: invisible y desplazado hacia arriba
-    whileInView={{ opacity: 1, y: 0 }} // Animación cuando el elemento es visible
-    viewport={{ once: true }} // La animación solo se ejecuta una vez
-    transition={{ duration: 1.5, ease: "easeOut" }} // Duración y curva de la animación
-    className="text-5xl lg:text-[70px] font-bold text-white p-6 text-center"
-  >
-    Unser Angebot
-  </motion.h1>
-        </div>
-        {services.map((service, index) => (
-          <div key={index} className="h-screen relative flex items-center justify-center overflow-hidden">
-            {/* Solo la imagen tiene el efecto de parallax */}
-            <Parallax speed={-1} easing="easeInQuad" scale={[1.05, 1.5]} className="absolute inset-0 z-0">
-              <Image
-                src={service.image || "/placeholder.svg"}
-                alt={service.title}
-                fill
-                objectFit="cover"
-                className=""
-              />
-            </Parallax>
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+}
 
-            {/* El título y la descripción están fuera del parallax */}
-            <div className="container mx-auto lg:ml-5 px-4 z-10">
-              <div className="flex flex-col md:flex-row items-center justify-between">
-                <div className="w-full md:w-1/2 mb-8 md:mb-0 md:pr-5 bg-white bg-opacity-80 p-6 rounded-lg shadow-xl shadow-orange-700/50">
-                  <h2 className="lg:text-4xl text-2xl font-bold mb-4 text-orange-600">{service.title}</h2>
-                  <p className="lg:text-xl text-md text-gray-800">{service.description}</p>
-                </div>
+const cardVariants = {
+  hidden: { 
+    opacity: 0, 
+    y: 50,
+    scale: 0.9
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut"
+    },
+  },
+}
+
+const Services = () => {
+  return (
+    <section id="services" className="w-full min-h-screen py-20 bg-gradient-to-b from-gray-50 to-white">
+      <div className="container mx-auto px-4 md:px-8 lg:px-16">
+        {/* Title */}
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-center mb-20"
+        >
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-orange-600 mb-4">
+            Unser Angebot
+          </h1>
+          
+        </motion.div>
+
+        {/* Services Grid */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12"
+        >
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              variants={cardVariants}
+              className="group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 bg-white"
+            >
+              {/* Image */}
+              <div className="relative h-64 md:h-72 overflow-hidden">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
               </div>
-            </div>
-          </div>
-        ))}
-      </section>
-    </ParallaxProvider>
+
+              {/* Content */}
+              <div className="p-6 md:p-8">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-orange-600">
+                  {service.title}
+                </h2>
+                <p className="text-base md:text-lg leading-relaxed text-gray-700">
+                  {service.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
   )
 }
 
-export default ParallaxServices
+export default Services
 
 
 

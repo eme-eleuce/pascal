@@ -2,10 +2,10 @@
 
 import { motion } from "framer-motion"
 import { FaGithub, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa"
-import pascal from "@/app/photos/pascal.png";
-import jan from "@/app/photos/jan.png";
-import jorge from "@/app/photos/yoyo.png";
-import carleche from "@/app/photos/carleche.png";
+import pascal from "../../../public/photos/pascal.png";
+import jan from "../../../public/photos/jan.png";
+import jorge from "../../../public/photos/yoyo.png";
+import carleche from "../../../public/photos/carleche.png";
 import Image from 'next/image'
 
 const teamMembers = [
