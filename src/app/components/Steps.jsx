@@ -3,40 +3,40 @@
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { IoBulbOutline, IoDocumentTextOutline, IoVideocamOutline, IoColorPaletteOutline, IoCheckmarkCircleOutline, IoArrowForward } from "react-icons/io5"
+import { useLanguage } from "../../contexts/LanguageContext"
 
 export default function Steps() {
+  const { t } = useLanguage();
+  
   const steps = [
     {
       number: 1,
-      title: "Eure Idee",
-      description: "Erklärt uns eure Vorstellungen. Wir hören zu.",
+      title: t('steps.step1.title'),
+      description: t('steps.step1.description'),
       icon: IoBulbOutline,
     },
     {
       number: 2,
-      title: "Unser Konzept",
-      description:
-        "Wir machen aus euren Vorstellungen und Ideen ein Konzept z.B. in Form von Skripts, Moodboards, Storyboards etc.",
+      title: t('steps.step2.title'),
+      description: t('steps.step2.description'),
       icon: IoDocumentTextOutline,
     },
     {
       number: 3,
-      title: "Die Produktion",
-      description:
-        "Beleuchten, verkabeln, filmen, inszenieren – Drehtage bedeuten Spass und viel Arbeit! Wir lieben es.",
+      title: t('steps.step3.title'),
+      description: t('steps.step3.description'),
       icon: IoVideocamOutline,
     },
     {
       number: 4,
-      title: "Die Postproduktion",
-      description:
-        "Das Produkt kommt im Schnittraum zusammen. Nötige Anpassungen werden in Absprache mit euch angefertigt.",
+      title: t('steps.step4.title'),
+      description: t('steps.step4.description'),
       icon: IoColorPaletteOutline,
     },
     {
       number: 5,
-      title: "Das Produkt",
-      description: "Ihr erhält das visuelle Produkt, das euch als Firma weiterbringt.",
+      title: t('steps.step5.title'),
+      description: t('steps.step5.description'),
       icon: IoCheckmarkCircleOutline,
     },
   ]
@@ -79,7 +79,7 @@ export default function Steps() {
           transition={{ duration: 0.8 }}
           className="text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-16 text-orange-600"
         >
-          Der Prozess
+          {t('steps.title')}
         </motion.h1>
 
         {/* Grid */}
@@ -136,10 +136,10 @@ export default function Steps() {
         >
           <div className="max-w-3xl mx-auto bg-gradient-to-r from-orange-600 to-orange-500 rounded-3xl p-8 md:p-12 shadow-2xl">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Bereit, Ihre Vision zum Leben zu erwecken?
+              {t('steps.cta.title')}
             </h2>
             <p className="text-lg md:text-xl text-white/90 mb-8">
-              Sehen Sie sich unsere bisherigen Projekte an und lassen Sie sich inspirieren.
+              {t('steps.cta.subtitle')}
             </p>
             <Link href="/projekte">
               <motion.button
@@ -147,7 +147,7 @@ export default function Steps() {
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center gap-3 bg-white text-orange-600 px-8 py-4 rounded-full text-lg font-bold shadow-lg hover:shadow-xl transition-all"
               >
-                Unsere Projekte ansehen
+                {t('steps.cta.button')}
                 <IoArrowForward size={24} />
               </motion.button>
             </Link>

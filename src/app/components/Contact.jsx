@@ -2,8 +2,10 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useLanguage } from '../../contexts/LanguageContext'
 
 export default function Contact() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     vorname: '',
     name: '',
@@ -33,11 +35,11 @@ export default function Contact() {
       console.log('Response:', data)
 
       if (!response.ok) {
-        throw new Error(data.message || 'Ein Fehler ist aufgetreten')
+        throw new Error(data.message || t('contact.error'))
       }
 
       setStatus({
-        message: 'Nachricht erfolgreich gesendet!',
+        message: t('contact.success'),
         isError: false,
         isSubmitting: false
       })
@@ -70,10 +72,10 @@ export default function Contact() {
           transition={{ duration: 0.5 }}
         >
           <h1 className="text-4xl md:text-6xl font-bold text-orange-600">
-            KONTAKT
+            {t('contact.title')}
           </h1>
           <p className="text-xl md:text-2xl font-semibold mt-4 text-gray-700">
-            Kontaktiert uns und lasst uns über euer Vorhaben sprechen!
+            {t('contact.subtitle')}
           </p>
         </motion.div>
 
@@ -87,7 +89,7 @@ export default function Contact() {
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label htmlFor="vorname" className="block text-sm font-medium mb-1 text-gray-700">Vorname</label>
+              <label htmlFor="vorname" className="block text-sm font-medium mb-1 text-gray-700">{t('contact.firstName')}</label>
               <input
                 type="text"
                 id="vorname"
@@ -100,7 +102,7 @@ export default function Contact() {
             </div>
 
             <div>
-              <label htmlFor="name" className="block text-sm font-medium mb-1 text-gray-700">Name</label>
+              <label htmlFor="name" className="block text-sm font-medium mb-1 text-gray-700">{t('contact.lastName')}</label>
               <input
                 type="text"
                 id="name"
@@ -114,7 +116,7 @@ export default function Contact() {
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium mb-1 text-gray-700">Deine email*</label>
+            <label htmlFor="email" className="block text-sm font-medium mb-1 text-gray-700">{t('contact.email')}</label>
             <input
               type="email"
               id="email"
@@ -127,7 +129,7 @@ export default function Contact() {
           </div>
 
           <div>
-            <label htmlFor="nachricht" className="block text-sm font-medium mb-1 text-gray-700">Nachricht*</label>
+            <label htmlFor="nachricht" className="block text-sm font-medium mb-1 text-gray-700">{t('contact.message')}</label>
             <textarea
               id="nachricht"
               name="nachricht"
@@ -151,7 +153,7 @@ export default function Contact() {
             className="w-full bg-orange-600 text-white py-3 px-6 rounded-lg text-base font-semibold
               hover:bg-orange-700 transition-colors duration-300 disabled:opacity-50"
           >
-            {status.isSubmitting ? 'Wird gesendet...' : 'ABSCHICKEN'}
+            {status.isSubmitting ? t('contact.sending') : t('contact.submit')}
           </button>
         </motion.form>
       </div>

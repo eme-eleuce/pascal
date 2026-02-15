@@ -1,8 +1,10 @@
 import Head from "next/head";
 import Hero from "./components/Hero";
+import IntroSection from "./components/IntroSection";
+import ServicesIcons from "./components/ServicesIcons";
+import CallToAction from "./components/CallToAction";
 import ParallaxServices from "./components/Services";
 import VideoGallery from "./components/VideoGallery";
-import Steps from "./components/Steps";
 import Team from "./components/Team";
 import Contact from "./components/Contact";
 
@@ -20,7 +22,9 @@ export default function Home() {
      
      {/* Content that slides over Hero */}
      <div className="relative z-10 bg-white">
-       <Steps />
+       <IntroSection />
+       <ServicesIcons />
+       <CallToAction />
        <Contact />
      </div>
     </div>

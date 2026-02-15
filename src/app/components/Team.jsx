@@ -7,38 +7,10 @@ import jan from "../../../public/photos/jan.png";
 import jorge from "../../../public/photos/yoyo.png";
 import carleche from "../../../public/photos/carleche.png";
 import Image from 'next/image'
+import { useLanguage } from "../../contexts/LanguageContext"
 
-const teamMembers = [
-  {
-    name: "Pascal Gysi",
-    role: "Gründer, DOP, Produzent",
-    description:
-      "Als studierter Sozialanthropologe, Linguist und unbelehrbarer Perfektionist macht er sich die nötigen Überlegungen schon lange vor dem Filmen der ersten Einstellung.Timing, Inszenierung, Komposition, Beleuchtung – An einem perfekten Dreh ist nichts dem Zufall überlassen.",
-    image: pascal,
-    objectPosition: "center 5%",
-  },
-  {
-    name: "Jan Baumgartner",
-    role: "Kamera/Regie",
-    description: "Technik-affiner Kameramann mit viel Erfahrung in Liveproduktionen. Er behält die Ruhe auf de hektischen Set.",
-    image: jan,
-    objectPosition: "center 5%",
-  },
-  {
-    name: "Jorge Delgado",
-    role: "Postproduktion/Editor",
-    description: "Cineast und DOP mit langjähriger Erfahrung in der Produktion und Postproduktion. Er vervollständigt das geﬁlmte Material und führt Bild und Ton in Zusammenarbeit mit Pascal Gysi zu einem runden Produkt zusammen.",
-    image: jorge,
-    objectPosition: "center 15%",
-  },
-  {
-    name: "Carlos Zambrano",
-    role: "Colorist/Editor",
-    description: "Sieht die Welt in RGB und CMYK und träumt von Codecs und Bildformaten. Er verpasst dem Material den letzten Schliff  und stimmt das Ausgabeformat auf eure Bedürfnisse ab.",
-    image: carleche,
-    objectPosition: "center 5%",
-  },
-]
+const images = [pascal, jan, jorge, carleche];
+const objectPositions = ["center 5%", "center 5%", "center 15%", "center 5%"];
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -74,6 +46,14 @@ const textVariants = {
 }
 
 function Team() {
+  const { t } = useLanguage();
+  
+  const teamMembers = t('team.members').map((member, index) => ({
+    ...member,
+    image: images[index],
+    objectPosition: objectPositions[index]
+  }));
+  
   return (
     <section className="py-20">
       <div className="container mx-auto px-4">
@@ -87,14 +67,8 @@ function Team() {
             variants={textVariants}
             className="text-5xl md:text-8xl font-bold mb-16 text-orange-600"
           >
-            Triff unser Team
+            {t('team.title')}
           </motion.h2>
-          <motion.p 
-            variants={textVariants}
-            className="text-lg font-bold max-w-3xl mx-auto mb-32"
-          >
-            Seit 2018 produziert Sub Sole Films erfolgreich Bewegtbild. Vom Konzept bis zur Postproduktion. Dieses Team macht es möglich:
-          </motion.p>
         </motion.div>
 
         <motion.div
@@ -125,14 +99,6 @@ function Team() {
                   <h3 className="text-3xl font-bold mb-1 text-orange-600">{member.name}</h3>
                   <p className="text-lg mb-5 font-semibold">{member.role}</p>
                   <p className="text-md mb-4 text-justify">{member.description}</p>
-                </div>
-                <div className="flex gap-4 pt-4">
-                  <a href="#" className="hover:text-orange-600 transition-colors">
-                    <FaLinkedin className="w-7 h-7" />
-                  </a>
-                  <a href="#" className="hover:text-orange-600 transition-colors">
-                    <FaInstagram className="w-7 h-7" />
-                  </a>
                 </div>
               </div>
             </motion.div>

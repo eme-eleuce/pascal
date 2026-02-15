@@ -1,0 +1,123 @@
+{
+  "navbar": {
+    "services": "Dienstleistungen",
+    "projects": "Projekte",
+    "team": "Team",
+    "copyright": "Alle Rechte vorbehalten"
+  },
+  "intro": {
+    "primaryText": "Sub Sole Films ist eine kreative Videoagentur mit Sitz mitten in der Berner Altstadt.",
+    "secondaryText": "Wir produzieren visuellen Content und verpassen eurer Unternehmenskommunikation die passende Bildsprache."
+  },
+  "servicesIcons": {
+    "title": "Dienstleistungen",
+    "items": [
+      "Camera-Crew und Equipment",
+      "Konzept und Content Creation",
+      "Live-Broadcast",
+      "Postproduktion"
+    ]
+  },
+  "cta": {
+    "title": "Bereit, eure Vision zum Leben zu erwecken?",
+    "subtitle": "Eine kurze Nachricht genügt:",
+    "languages": "Wir sprechen Deutsch, Englisch, Spanisch und Französisch."
+  },
+  "steps": {
+    "title": "Der Prozess",
+    "step1": {
+      "title": "Eure Idee",
+      "description": "Erklärt uns eure Vorstellungen. Wir hören zu."
+    },
+    "step2": {
+      "title": "Unser Konzept",
+      "description": "Wir machen aus euren Vorstellungen und Ideen ein Konzept z.B. in Form von Skripts, Moodboards, Storyboards etc."
+    },
+    "step3": {
+      "title": "Die Produktion",
+      "description": "Beleuchten, verkabeln, filmen, inszenieren – Drehtage bedeuten Spass und viel Arbeit! Wir lieben es."
+    },
+    "step4": {
+      "title": "Die Postproduktion",
+      "description": "Das Produkt kommt im Schnittraum zusammen. Nötige Anpassungen werden in Absprache mit euch angefertigt."
+    },
+    "step5": {
+      "title": "Das Produkt",
+      "description": "Ihr erhält das visuelle Produkt, das euch als Firma weiterbringt."
+    },
+    "cta": {
+      "title": "Bereit, Ihre Vision zum Leben zu erwecken?",
+      "subtitle": "Sehen Sie sich unsere bisherigen Projekte an und lassen Sie sich inspirieren.",
+      "button": "Unsere Projekte ansehen"
+    }
+  },
+  "contact": {
+    "title": "KONTAKT",
+    "subtitle": "Kontaktiert uns und lasst uns über euer Vorhaben sprechen!",
+    "firstName": "Vorname",
+    "lastName": "Name",
+    "email": "Deine email*",
+    "message": "Nachricht*",
+    "submit": "ABSCHICKEN",
+    "sending": "Wird gesendet...",
+    "success": "Nachricht erfolgreich gesendet!",
+    "error": "Ein Fehler ist aufgetreten"
+  },
+  "footer": {
+    "contact": "KONTAKT",
+    "address": "ADRESSE",
+    "copyright": "Alle Rechte vorbehalten"
+  },
+  "services": {
+    "title": "Dienstleistungen",
+    "items": [
+      {
+        "title": "Camera-Crew und Equipment",
+        "description": "Ihr habt eine Produktion, es fehlt nur noch die Crew und das Equipment? Wir führen die Produktion gerne für euch aus. Egal wo. Wir sind flexibel und reisen gerne für das passende Bild."
+      },
+      {
+        "title": "Content Creation",
+        "description": "Visueller Content nach euren Wünschen. Als Unternehmen habt ihr klare Botschaften. Wir finden die passende Bildsprache dafür und liefern euch mit dem richtigen Konzept ansprechendes Bildmaterial."
+      },
+      {
+        "title": "Live-Broadcast",
+        "description": "Egal ob Stream oder Übertragung des Bildes am Event. Wir leiten die gesamte Produktion, damit jeder dabei sein kann."
+      },
+      {
+        "title": "Postproduktion",
+        "description": "Wir führen die Postproduktion nach euren Wünschen aus. Für den Schnitt, das Grading, die Versionisierung oder das Audiodesign greifen wir auf state of the art Tools zurück und liefern euch ein professionelles Produkt."
+      }
+    ]
+  },
+  "videoGallery": {
+    "title": "Einige Projekte",
+    "subtitle": "Entdecken Sie unsere neuesten Arbeiten und Projekte",
+    "moreProjects": "Weitere Projekte"
+  },
+  "team": {
+    "title": "Triff unser Team",
+    "subtitle": "Seit 2018 produziert Sub Sole Films erfolgreich Bewegtbild. Vom Konzept bis zur Postproduktion. Dieses Team macht es möglich:",
+    "members": [
+      {
+        "name": "Pascal Gysi",
+        "role": "Gründer, DOP, Produzent",
+        "description": "Als studierter Sozialanthropologe, Linguist und unbelehrbarer Perfektionist macht er sich die nötigen Überlegungen schon lange vor dem Filmen der ersten Einstellung.Timing, Inszenierung, Komposition, Beleuchtung – An einem perfekten Dreh ist nichts dem Zufall überlassen."
+      },
+      {
+        "name": "Jan Baumgartner",
+        "role": "Kamera/Regie",
+        "description": "Technik-affiner Kameramann mit viel Erfahrung in Liveproduktionen. Er behält die Ruhe auf de hektischen Set."
+      },
+      {
+        "name": "Jorge Delgado",
+        "role": "Postproduktion/Editor",
+        "description": "Cineast und DOP mit langjähriger Erfahrung in der Produktion und Postproduktion. Er vervollständigt das geﬁlmte Material und führt Bild und Ton in Zusammenarbeit mit Pascal Gysi zu einem runden Produkt zusammen."
+      },
+      {
+        "name": "Carlos Zambrano",
+        "role": "Colorist/Editor",
+        "description": "Sieht die Welt in RGB und CMYK und träumt von Codecs und Bildformaten. Er verpasst dem Material den letzten Schliff  und stimmt das Ausgabeformat auf eure Bedürfnisse ab."
+      }
+    ]
+  }
+}
