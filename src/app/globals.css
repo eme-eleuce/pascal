@@ -3,9 +3,18 @@
 @tailwind utilities;
 
 html {
-    
   color: black;
   background-color: #f8f8f8;
   scroll-behavior: smooth;
-  ;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+* {
+  box-sizing: border-box;
 }

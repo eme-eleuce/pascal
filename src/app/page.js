@@ -10,7 +10,7 @@ import Contact from "./components/Contact";
 
 export default function Home() {
   return (
-    <div> 
+    <div className="overflow-x-hidden"> 
 
       <Head>
         <title>Sub Sole Films</title>
@@ -21,7 +21,7 @@ export default function Home() {
      <Hero/>
      
      {/* Content that slides over Hero */}
-     <div className="relative z-10 bg-white">
+     <div className="relative z-10 bg-white overflow-x-hidden">
        <IntroSection />
        <ServicesIcons />
        <CallToAction />

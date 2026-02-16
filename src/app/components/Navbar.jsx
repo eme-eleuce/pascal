@@ -68,10 +68,10 @@ export default function Navbar() {
           : 'bg-[#1B365D] shadow-md'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8" suppressHydrationWarning>
-        <div className="flex items-center justify-between h-16 sm:h-20" suppressHydrationWarning>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" suppressHydrationWarning>
+        <div className="flex items-center justify-between h-16 sm:h-20 gap-2" suppressHydrationWarning>
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
+          <Link href="/" className="flex-shrink-0 min-w-0">
             <Image
               src="/photos/logo.png"
               alt="Sub Sole Films"
@@ -84,7 +84,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center space-x-4 lg:space-x-8" suppressHydrationWarning>
+          <div className="hidden md:flex items-center space-x-4 lg:space-x-8 flex-shrink-0" suppressHydrationWarning>
             {navLinks.map((link) => (
               <div key={link.name} className="text-white text-lg lg:text-xl xl:text-3xl font-bold" suppressHydrationWarning>
                 <NavLink href={link.href}>{link.name}</NavLink>
@@ -94,7 +94,7 @@ export default function Navbar() {
 
           {/* Language Switcher - Desktop */}
           {mounted && (
-            <div className="hidden md:flex items-center gap-1 px-2 py-1 border-2 border-white rounded-md">
+            <div className="hidden md:flex items-center gap-1 px-2 py-1 border-2 border-white rounded-md flex-shrink-0">
               <button
                 onClick={() => switchLanguage('de')}
                 className={`text-base lg:text-lg font-bold transition-all duration-300 px-1 ${
@@ -120,10 +120,10 @@ export default function Navbar() {
           )}
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden z-50 flex-shrink-0">
+          <div className="md:hidden flex-shrink-0 ml-auto">
             <button
               onClick={toggleMenu}
-              className="focus:outline-none relative z-50 w-10 h-10 flex items-center justify-center"
+              className="focus:outline-none w-10 h-10 flex items-center justify-center"
               aria-label="Toggle menu"
             >
               <div className="relative w-8 h-8">

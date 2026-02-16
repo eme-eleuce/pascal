@@ -56,7 +56,7 @@ const Services = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center mb-20"
         >
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-orange-600 mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-orange-600 mb-4">
             {t('services.title')}
           </h1>
           
